@@ -1,0 +1,79 @@
+{% extends 'app/base.html' %}
+
+
+{% block content %}
+
+
+<h2>
+All Authors
+</h2>
+
+
+
+<a href="{% url 'add_author' %}"
+class="btn btn-success mb-3">
+
++ Add Author
+
+</a>
+
+
+
+<div class="row">
+
+
+{% for author in authors %}
+
+
+<div class="col-md-4">
+
+
+<div class="card shadow mb-3">
+
+
+<div class="card-body">
+
+
+<h5>
+
+{{author.name}}
+
+</h5>
+
+
+<p>
+
+Books:
+{{author.books.count}}
+
+</p>
+
+
+
+<a href="{% url 'author_detail' author.id %}"
+class="btn btn-info">
+
+View
+
+</a>
+
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+{% endblock %}

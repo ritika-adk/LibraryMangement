@@ -1,0 +1,50 @@
+{% extends 'app/base.html' %}
+
+
+{% block content %}
+
+
+<div class="card shadow p-4">
+
+
+<h3>
+Are you sure you want to delete:
+</h3>
+
+
+<h4 class="text-danger">
+
+{{book.title}}
+
+</h4>
+
+
+
+<form method="POST">
+
+{% csrf_token %}
+
+
+<button class="btn btn-danger">
+
+Yes Delete
+
+</button>
+
+
+<a href="{% url 'book_detail' book.id %}"
+class="btn btn-secondary">
+
+Cancel
+
+</a>
+
+
+
+</form>
+
+
+</div>
+
+
+{% endblock %}

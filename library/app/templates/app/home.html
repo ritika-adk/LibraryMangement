@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+
+
+{% block content %}
+
+
+<div class="text-center">
+
+<h1 class="display-4">
+📚 Library Management System
+</h1>
+
+
+<p class="lead">
+Manage books, authors and availability easily.
+</p>
+
+
+<a href="{% url 'books' %}" 
+class="btn btn-primary">
+
+View Books
+
+</a>
+
+
+<a href="{% url 'authors' %}" 
+class="btn btn-success">
+
+View Authors
+
+</a>
+
+
+</div>
+
+
+
+{% endblock %}

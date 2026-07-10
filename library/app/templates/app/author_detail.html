@@ -1,0 +1,101 @@
+{% extends 'app/base.html' %}
+
+
+{% block content %}
+
+
+<div class="card shadow p-4">
+
+
+<h2>
+{{author.name}}
+</h2>
+
+
+<p>
+
+{{author.bio}}
+
+</p>
+
+
+<p>
+
+Date of Birth:
+
+{{author.date_of_birth}}
+
+</p>
+
+
+<hr>
+
+
+<h4>
+Books Written
+</h4>
+
+
+
+<ul class="list-group">
+
+
+{% for book in author.books.all %}
+
+
+<li class="list-group-item">
+
+
+<a href="{% url 'book_detail' book.id %}">
+
+{{book.title}}
+
+</a>
+
+
+</li>
+
+
+
+{% empty %}
+
+
+<li class="list-group-item">
+
+No books available
+
+</li>
+
+
+{% endfor %}
+
+
+</ul>
+
+
+
+<br>
+
+
+<a href="{% url 'edit_author' author.id %}"
+class="btn btn-primary">
+
+Edit
+
+</a>
+
+
+<a href="{% url 'delete_author' author.id %}"
+class="btn btn-danger">
+
+Delete
+
+</a>
+
+
+
+</div>
+
+
+
+{% endblock %}
